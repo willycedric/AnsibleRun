@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="12" failures="0" time="2.646">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-09-13T15:22:14" time="0.768" tests="1">
+    <testcase classname=" Should return the corresponding value" name=" Should return the corresponding value" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-09-13T15:22:14" time="1.636" tests="11">
+    <testcase classname=" The mock should be called only 1 time when all is passed as parameter" name=" The mock should be called only 1 time when all is passed as parameter" time="0.004">
+    </testcase>
+    <testcase classname=" The mock should be called only 1 time when failed and active is passed as parameter" name=" The mock should be called only 1 time when failed and active is passed as parameter" time="0.001">
+    </testcase>
+    <testcase classname=" The mock should be called only 1 time when failed is passed as parameter" name=" The mock should be called only 1 time when failed is passed as parameter" time="0">
+    </testcase>
+    <testcase classname=" returns http://web-tools-dev/RunTestCaseService/api/RunTestCase/GetAllTestPoints when all is passed as parameter" name=" returns http://web-tools-dev/RunTestCaseService/api/RunTestCase/GetAllTestPoints when all is passed as parameter" time="0.001">
+    </testcase>
+    <testcase classname=" returns http://web-tools-dev/RunTestCaseService/api/RunTestCase/GetAllActiveAndFailedTestPoints when failed and active is passed as parameter" name=" returns http://web-tools-dev/RunTestCaseService/api/RunTestCase/GetAllActiveAndFailedTestPoints when failed and active is passed as parameter" time="0">
+    </testcase>
+    <testcase classname=" returns http://web-tools-dev/RunTestCaseService/api/RunTestCase/GetAllFailedTestPoints when failed is passed as parameter" name=" returns http://web-tools-dev/RunTestCaseService/api/RunTestCase/GetAllFailedTestPoints when failed is passed as parameter" time="0.001">
+    </testcase>
+    <testcase classname=" return [&quot;WI_10000_97268&quot;, &quot;WI_10000_96614&quot;, &quot;WI_10000_96615&quot;, &quot;WI_10000_96623&quot;, &quot;WI_10000_96822&quot;, &quot;WI_10000_97112&quot;, &quot;WI_10000_97137&quot;, &quot;WI_10000_97521&quot;] when the filtered test plan id is 10000" name=" return [&quot;WI_10000_97268&quot;, &quot;WI_10000_96614&quot;, &quot;WI_10000_96615&quot;, &quot;WI_10000_96623&quot;, &quot;WI_10000_96822&quot;, &quot;WI_10000_97112&quot;, &quot;WI_10000_97137&quot;, &quot;WI_10000_97521&quot;] when the filtered test plan id is 10000" time="0.004">
+    </testcase>
+    <testcase classname=" return [&quot;WI_97613_97268&quot;, &quot;WI_97613_96614&quot;, &quot;WI_97613_96615&quot;, &quot;WI_97613_96623&quot;, &quot;WI_97613_96822&quot;, &quot;WI_97613_97112&quot;, &quot;WI_97613_97137&quot;, &quot;WI_97613_97521&quot;] when the filtered test plan id is 97613" name=" return [&quot;WI_97613_97268&quot;, &quot;WI_97613_96614&quot;, &quot;WI_97613_96615&quot;, &quot;WI_97613_96623&quot;, &quot;WI_97613_96822&quot;, &quot;WI_97613_97112&quot;, &quot;WI_97613_97137&quot;, &quot;WI_97613_97521&quot;] when the filtered test plan id is 97613" time="0.002">
+    </testcase>
+    <testcase classname="  return Please enter a test category filter when the filte is undefined" name="  return Please enter a test category filter when the filte is undefined" time="0.001">
+    </testcase>
+    <testcase classname="  return Please enter a test category filter when the filte is " name="  return Please enter a test category filter when the filte is " time="0">
+    </testcase>
+    <testcase classname=" Should resolved with a valid object when the filter is specify" name=" Should resolved with a valid object when the filter is specify" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
