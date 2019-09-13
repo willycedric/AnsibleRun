@@ -1,8 +1,5 @@
-var Promise = require('promise');
-const argv = require('yargs').argv;
+const Promise = require('promise');
 let Config = require("./../config")
-const { fork } = require('child_process')
-const isWin = process.platform === "win32"
 const { runTestCase } = require('./../run-win')
 const { runTestCaseMac } = require('./../run-mac')
 const _ = require('lodash')
@@ -10,7 +7,8 @@ const { MAX_TEST_BY_STACK } = require('./../config')
 const util = require('util')
 const debug = util.debuglog('workers')
 const url = require('url')
-const version = require('root-require')('package.json').version
+const { version, name } = require('root-require')('package.json')
+const { environmentToExport } = require('./../config')
 
 const parseArguments = (argv) => {
     return new Promise((resolve, reject) => {
@@ -126,18 +124,18 @@ let parseTestPointsResult = (testPoints, testPlanId) => {
     return new Promise((resolve, reject) => {
         if (testPoints.length > 0) {
             // get all the config assigned to te test plan in an array 
-            var config = testPoints.map((element) => {
+            const config = testPoints.map((element) => {
                 return element.configName
             })
 
             //Return an array of uniq value
-            var uniqConfig = config.filter((value, index, self) => {
+            const uniqConfig = config.filter((value, index, self) => {
                 return self.indexOf(value) === index;
             })
 
             //parse the testPoints array to obtained an object whome keys corresponds to the configs and value contains the test case id wich have been assigned to the config
-            var listFinal = {}
-            var unknow = uniqConfig.map(function (elt, index) {
+            const listFinal = {}
+            const unknow = uniqConfig.map(function (elt, index) {
                 listFinal[elt] = []
 
                 testPoints.forEach((function (entry, index2) {
@@ -151,10 +149,10 @@ let parseTestPointsResult = (testPoints, testPlanId) => {
                 return listFinal
             })
 
-            var res = unknow.filter(function onlyUnique(value, index, self) {
+            const res = unknow.filter(function onlyUnique(value, index, self) {
                 return self.indexOf(value) === index;
             })
-            var tempResult = Object.values(res[0]).map((arr, index) => {
+            const tempResult = Object.values(res[0]).map((arr, index) => {
                 temp = []
                 if (arr.length > MAX_TEST_BY_STACK)
                     temp = reduceTestStack(arr, temp, MAX_TEST_BY_STACK)
@@ -201,7 +199,7 @@ const sanityCheckHandler = (req, res) => {
         //Get the headers as an object
         const headers = req.headers
         //message
-        const message = `runtestcase up and running on ${hostname} - version ${version} `
+        const message = `${ name } up and running on ${ hostname } - version ${version} - ${environmentToExport.envName} envrionment `
         //construct the data object to send to the handler
         const payload = {
             trimmedPath,
@@ -211,7 +209,7 @@ const sanityCheckHandler = (req, res) => {
             message
         }
         // Convert the payload to a string 
-        var payloadString = JSON.stringify(payload, null, 4) //payload send back by the handler to the user
+        const payloadString = JSON.stringify(payload, null, 4) //payload send back by the handler to the user
         console.log(payloadString)
         //Send the response
         res.setHeader('Content-Type', 'text/html')

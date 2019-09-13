@@ -37,3 +37,11 @@
 {"message":"using the port passing as parameter 8080","level":"info"}
 {"message":"using the port passing as parameter 8080","level":"info"}
 {"message":"using the port passing as parameter 8080","level":"info"}
+{"message":"using the port passing as parameter 8080","level":"info"}
+{"message":"using the port passing as parameter 8080","level":"info"}
+{"message":"using the port passing as parameter 8080","level":"info"}
+{"message":"using the port 3004","level":"info"}
+{"message":"using the port 3004 on staging","level":"info"}
+{"message":"using the port 3004 on staging","level":"info"}
+{"message":"using the port 3004 - staging environment","level":"info"}
+{"message":"using the port 5000 - production environment","level":"info"}
